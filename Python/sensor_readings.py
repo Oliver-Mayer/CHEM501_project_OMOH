@@ -45,7 +45,7 @@ meta = {
 # convert dictionary to dataframe
 df = pd.DataFrame(data_dict)
 
-filename = f"temp_data_{datetime.now().strftime('%Y-%m-%d_%Hh%Mm%Ss')}.csv"
+filename = rf"C:\Users\olima\OneDrive\Documents\GitHub\CHEM501_project\Data\Raw\sensor_data{datetime.now().strftime('%Y-%m-%d_%Hh%Mm%Ss')}.csv"
 with open(filename, "w", newline = "") as f:
     for key, value in meta.items():
         f.write(f"# {key}: {value}\n")
