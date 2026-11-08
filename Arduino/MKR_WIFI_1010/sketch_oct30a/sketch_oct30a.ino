@@ -28,4 +28,5 @@ void loop() {
   Serial.print(",");
   
   Serial.println(hum.value());
+  delay(50);
 }

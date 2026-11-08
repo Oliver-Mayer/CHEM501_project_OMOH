@@ -24,6 +24,7 @@ mkr = serial.Serial(dev, 115200, timeout = 1)
 while time.time() - start_time < runtime:
 
     # read the incoming data
+    print(time.time() - start_time)
     line = mkr.readline().decode("utf-8").strip()
     print(line)
     # split the data at commas
