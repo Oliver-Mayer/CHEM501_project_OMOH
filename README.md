@@ -3,7 +3,7 @@
 CHEM501 Final Project:
 
 -Project Aim.
-    To create a system that can measure air quality and suggest potential pollutants based on a machne larning programme.
+    To test if the german pratcice of stossluften is effective by measuring both the humidity and temperature in a room, then sending a message to open the windows for a certain amount of time (based on metadata from a weather website) and then monitoring the change in both temperature and humidity.
 
 -Hardware.
     Nicla Sense ME
