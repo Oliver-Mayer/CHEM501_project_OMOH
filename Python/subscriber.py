@@ -54,4 +54,3 @@ try:
 
 except KeyboardInterrupt:
     print("Stopping collection...")
-    grapher.scatter_data(filename)
