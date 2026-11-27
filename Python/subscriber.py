@@ -7,13 +7,15 @@ import grapher
 current_humidity = None
 current_temperature = None
 
-meta = {
-    "type": "shower"
-}
-
 header = ["timestamp", "temperature", "humidity"]
 
-filename = f"sensor_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+# Create folder if it doesn't exist
+os.makedirs("data", exist_ok=True)
+
+filename = os.path.join(
+    "data",
+    f"sensor_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+)
 
 
 if not os.path.exists(filename):
@@ -37,18 +39,11 @@ def on_message(client, userdata, msg):
             with open(filename, "a", newline="") as f:
                 writer = csv.writer(f)
 
-                writer.writerow([
-                    datetime.now(),
-                    current_temperature,
-                    current_humidity
-                ])
+                writer.writerow([datetime.now(),current_temperature,current_humidity])
 
 client = mqtt.Client()
 
-client.connect(
-    "pf-c0uudk9ksjw7kkm9chm5.cedalo.cloud",
-    1883
-)
+client.connect("pf-c0uudk9ksjw7kkm9chm5.cedalo.cloud",1883)
 
 client.subscribe("OM-OH/#")
 
